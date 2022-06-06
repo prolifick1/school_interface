@@ -1,5 +1,5 @@
 import csv
-from classes.person import Person
+from .person import Person
 
 class Staff(Person):
     def __init__(self, name, age, password, role, employee_id):

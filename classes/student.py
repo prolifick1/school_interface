@@ -1,4 +1,4 @@
-from classes.person import Person
+from .person import Person
 import csv
 
 #Student class is in charge of talking to the student 'database'
@@ -17,10 +17,18 @@ class Student(Person):
             for row in reader:
                 student_info['name'] = row[0]
                 student_info['age'] = row[1]
-                student_info['password'] = row[2]
-                student_info['role'] = row[3]
-                student_info['school_id'] = row[4]
+                student_info['role'] = row[2]
+                student_info['school_id'] = row[3]
+                student_info['password'] = row[4]
                 all_students.append(Student(**student_info))
             return all_students
+
+    def __str__(self):
+        print(f"""
+{self.name}
+---------------
+age: {self.age}
+id: {self.school_id}
+""")
 
 
