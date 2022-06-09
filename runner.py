@@ -25,6 +25,15 @@ Options:
         student = school.find_student_by_id(student_id)
         str(student)
         pass
+    elif mode == '3':  
+        student_data = {'role':'student'}
+        student_data['name']      = input('Enter student name:\n')
+        student_data['age']       = input('Enter student age: \n')
+        student_data['school_id'] = input('Enter student school id: \n')
+        student_data['password']  = input('Enter student password: \n')
+        school.add_student(student_data)
+    elif mode == '4':
+        school_id = input('Enter an id to delete student\n')
+        school.delete_student(school_id)
     elif mode == '5': 
-        break
-    
+            break
